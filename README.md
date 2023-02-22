@@ -1,25 +1,135 @@
-# Why solving Incrementality is Important?
-Incrementaility aims to answer one fundemental question, how many of the 1,000 Conversions claimed as driven by Paid Search would have happened 
-even if we spent no money on Paid Search? Lift and geo experimentation traditionally have helped us answer that. 
-
-## What is Lift?
-Lift is a scientific measurement technique which allows users to accurately understand and compare the value of their strategies. Lift, 
-which is grounded on experimental design, is typically used to measure the true or causal effect that an ad campaign had on business metrics such as Sales, App Installs, or Leads. By estimating the incremental effect that these strategies provide, analysts are able to understand, analyze, and optimize their cross-channel strategies through data and science.
-
-## What is Geo Experimentation?
-
-There are many ways to measure Lift and Geo Experimentation is one that has been rapidly gaining popularity. In general, Geo Experimentation 
-refers to any test where the treatment is administered at the geo-level. In practice, this often means that ad campaigns are geo-targeted in 
-such a way that the test regions are eligible to see ads while the control ones aren’t. Geo Experimental methods use this information to calculate 
-the true value that this strategy had on your audience. Moreover, since they rely on aggregated data they’re privacy-safe, can work across channels, 
-and are very robust against signal-loss.
-
-## Why GeoLift?
-
-As advertising evolves to incorporate more privacy for consumers, measurement techniques that rely on aggregation and modeling can help you understand true lift. 
-That’s because the data used to inform such techniques isn’t affected by changes such as cookie loss. Geo experimentation is one technique that advertisers can use to calculate lift for a variety of channels, even as data availability is reduced or changed across the ads ecosystem.
-
-## Outcome of our GeoLift
-The results show that the campaigns led to a 5.4% lift in units sold corresponding to 4667 incremental units for this 15-day test. Moreover, the Average Estimated Treatment Effect is of 155.556 units every day of the test. Most importantly, we observe that these results are statistically significant at a 95% level. In fact, there’s only a 1.1% chance of observing an effect of this magnitude or larger if the actual treatment effect was zero. In other words, it is extremely unlikely that these results are just due to chance.  
+# GeoLift in Python Tutorial
 
 
+## Overview
+
+GeoLift is an end-to-end solution to measure Lift at a Geo-level using the latest developments in Synthetic Control Methods. Through this tutorial it is possible to run Geolift R functions as power calculations, inference and plots in Python. 
+
+Check out the files below for a more detailed description of the main functionalities of the package:
+
+- GeoLiftPythonWalkthrough.ipynb: the completed GeoLift walkthrough in python including GeoLift single and multicell.
+
+- demo.py: a simple GeoLift walkthrough in Python including only GeoLift single cell.
+
+
+## Requirements 
+
+GeoLift in Python version requires or works with:
+
+- R version 4.0.0 or newer. Please check [R installaton](https://facebookincubator.github.io/GeoLift/docs/GettingStarted/InstallingR).
+
+- Python version 3.7.0 or newer. Please check [Python installation](https://www.python.org/).
+
+
+## Installation
+
+The installation of GeoLift in Python version assumes that you will use pip3 as your Python package manager. If you do not use pip3, before running anything, edit the commands in setup.sh and change pip3 to your Python package manager to avoid package management issues.
+
+### Option 1 - Work environment
+
+Step 1: Download GeoLiftPython folder hosted on GeoLift's Github.
+
+Step 2 (On Terminal): Located in the GeoLiftPython folder, run the commands below in your environment: 
+
+```
+pip3 install -r requirements.txt
+python3 r_lang_requirements.py
+```
+
+Step 2 (On Jupyter): Located in the GeoLiftPython folder, run the commands below in your environment: 
+
+```
+!pip3 install -r requirements.txt
+%run r_lang_requirements.py
+```
+
+These commands will:
+1.1 install the `pandas`, `rpy2`, `ipython`, `jupyter` packages under `requirement.txt`.
+1.2 install `augsynth` and `Geolift` R packages in `r_lang_requirements.txt`.
+
+NOTE: 
+If you don't want to install Jupyter, you can remove jupyter from requirements.txt
+
+### Option 2 - Virtual environment (MacOS only)
+
+Step 1: Download GeoLiftPython folder hosted on GeoLift's Github.
+
+Step 2: In your terminal, go to the GeoLiftPython folder and run the following:
+```
+bash setup.sh
+```
+This command will:
+1.1 install `virtualenv` python package and activate a virutal environment. 
+1.2 install the `pandas`, `rpy2`, `ipython`, `jupyter` packages under `requirement.txt`.
+1.3 install `augsynth` and `Geolift` R packages in `r_lang_requirements.txt`.
+1.4 open Jupyter Notebook.
+
+Step 3: Open the `GeoLiftPython.ipynb` directly from your Jupyter Notebook interface.
+
+NOTE: 
+If you have closed your notebook, there is no need to reinstall everything.  All you need to do is reactivate your virtualenv with:
+
+```
+source path/to/GeoLiftPython/venv_geolift_python/bin/activate
+jupyter notebook
+```
+If your GeoLift files are in a different folder than the one activated, you need to go to the folder where your GeoLift files are located before running `jupyter notebook`.
+
+
+Happy GeoLifting!
+
+
+## GeoLiftPython folder
+
+In the GeoLiftPython folder you'll find:
+
+- `GeoLiftPythonWalkthrough.ipynb`: the completed GeoLift walkthrough in python including GeoLift single and multicell.
+
+- `demo.py`: a simple GeoLift walkthrough in Python including only GeoLift single cell.
+
+- `setup.sh`: all necessary commands to simplify the setup of Python's environment and packages installation to run GeoLift in Python. This will setup a virtual environment and install the packages specified in requirements.txt, in r_lang_requirements.py files and it will open the Jupyter notebook.
+
+- `requirements.txt`: contains the rpy2, ipython, pandas and jupyter pacakges.
+
+- `r_lang_requirements.py`: contains the commands to install augsynth and GeoLift R packages.
+
+- `utils.py`: Wrapper functions for GeoLift. 
+
+- `GeoLift_PreTest.csv`: simulated data of 40 US cities across 90 days included in the GeoLift package.
+
+- `GeoLift_Test.csv`: simulated Single cell data of 40 US cities across 90 days of pre-test and 15 days of test included in the GeoLift package.
+
+- `GeoLift_Test_MultiCell.csv`: simulated Multi-Cell data of 40 US cities across 90 days of pre-test and 15 days of test included in the GeoLift package. 
+
+- `Plots folder`: where the GeoLift plots will be saved.
+
+## Join the community 
+
+[facebook page](https://www.facebook.com/groups/fbgeolift/)
+
+
+## Contact
+
+- [jussan@fb.com](jussan@fb.com), Jussan Da Silva Bahia Nascimento, Facebook Marketing Science Partner
+
+- [aesquerra@fb.com](aesquerra@fb.com), Arturo Esquerra, Facebook Marketing Science Partner
+
+- [nicocru@fb.com](nicocru@fb.com), Nicolas Cruces, Facebook Marketing Science Partner
+
+
+
+## Licenses
+
+GeoLift is MIT licensed, as found in the LICENSE file.
+
+The rpy2, ipython and pandas pacakges are necessary. The jupyter package and virtualenv are recommend but not necessary.
+
+- [Licence of rpy2](https://github.com/rpy2/rpy2/blob/master/LICENSE)
+
+- [Licence of ipython](https://github.com/ipython/ipython/blob/main/LICENSE)
+
+- [Licence of pandas](https://github.com/pandas-dev/pandas/blob/main/LICENSE)
+
+- [Licence of virtualenv](https://github.com/pypa/virtualenv/blob/main/LICENSE)
+
+- [License of jupyter](https://jupyter.org/about)
