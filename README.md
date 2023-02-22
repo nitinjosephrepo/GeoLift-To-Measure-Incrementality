@@ -19,7 +19,7 @@ and are very robust against signal-loss.
 As advertising evolves to incorporate more privacy for consumers, measurement techniques that rely on aggregation and modeling can help you understand true lift. 
 That’s because the data used to inform such techniques isn’t affected by changes such as cookie loss. Geo experimentation is one technique that advertisers can use to calculate lift for a variety of channels, even as data availability is reduced or changed across the ads ecosystem.
 
-## Outcome of GeoLift
-
+## Outcome of our GeoLift
+The results show that the campaigns led to a 5.4% lift in units sold corresponding to 4667 incremental units for this 15-day test. Moreover, the Average Estimated Treatment Effect is of 155.556 units every day of the test. Most importantly, we observe that these results are statistically significant at a 95% level. In fact, there’s only a 1.1% chance of observing an effect of this magnitude or larger if the actual treatment effect was zero. In other words, it is extremely unlikely that these results are just due to chance.  
 
 
