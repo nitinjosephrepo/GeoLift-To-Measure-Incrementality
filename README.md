@@ -1,4 +1,4 @@
-# GeoLift in Python Tutorial
+# Measuring Incrementality With GeoLift
 
 
 ## Overview
